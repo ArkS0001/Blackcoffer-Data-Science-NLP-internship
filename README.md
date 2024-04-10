@@ -1,1 +1,58 @@
 # Blackcoffer-Data-Science-internship
+# Requirements:
+    Kernel:Python 3.10.6
+
+    pandas: A powerful data manipulation library for Python.
+        Version: 1.3.3 or higher
+
+    Beautiful Soup (beautifulsoup4): A library for pulling data out of HTML and XML files.
+        Version: 4.10.0 or higher
+
+    requests: An HTTP library for making requests and working with responses.
+        Version: 2.26.0 or higher
+
+    TextBlob: A library for processing textual data, including sentiment analysis.
+        Version: 0.15.3 or higher
+
+    NLTK (Natural Language Toolkit): A library for natural language processing.
+        Version: 3.6.5 or higher
+
+    NLTK Resources: Specific resources from NLTK need to be downloaded. These include tokenizers and stopwords.
+        Resource: punkt (for tokenization), stopwords (for filtering out common words)
+
+Ensure that you have these dependencies installed in your Python environment and that NLTK resources are downloaded before running the script. You can use pip to install Python packages:
+pip install pandas beautifulsoup4 requests textblob nltk
+
+# Methodology
+
+    1.Imports:
+        The necessary libraries are imported including pandas, BeautifulSoup, requests, TextBlob, and NLTK modules.
+
+    2.Reading Input:
+        It reads input data from an Excel file named "Input.xlsx".
+
+    3.Text Extraction:
+        It defines a function extract_text_from_url(url) to extract the text content from a given URL. This function uses BeautifulSoup to parse the HTML content of the webpage and retrieves the article title and text.
+
+    4.Text Analysis: 
+        It defines a function analyze_text(text) to perform various analyses on the extracted text. This includes sentiment analysis, calculating average sentence length, percentage of complex words, FOG index, syllables per word, count of personal pronouns, and average word length.
+
+    5.Processing URLs: 
+        It iterates through each row in the input Excel file, extracts text from the corresponding URLs using the extract_text_from_url() function, and then analyzes the extracted text using the analyze_text() function.
+
+    6.Output Data: 
+        It stores the analyzed data along with URL, article title, and article text into a dictionary.
+
+    7.Output to Excel: 
+        It creates a DataFrame from the output dictionary and writes it to an Excel file named "Output Data Main.xlsx".
+
+    8.NLTK Resource Download: 
+        It downloads necessary resources from NLTK such as tokenizers and stopwords.(not required)
+
+    9.Review the Output:
+        Open the "Output Data Main.xlsx" file to review the analysis results.
+        The output will include various metrics such as positive score, negative score, polarity score, subjectivity score, average sentence length, etc., for each URL.
+
+    10.Troubleshooting:
+        If you encounter any errors during execution, make sure you have a stable internet connection and the provided URLs are accessible.
+        Check for any missing or incorrectly formatted URLs in the input file.
